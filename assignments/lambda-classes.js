@@ -33,7 +33,9 @@ class Student extends Person {
       (this.favSubjects = attr.favSubjects);
   }
   listsSubjects() {
-    return `My favorite subjects are ${this.favSubjects}`;
+    this.favSubjects.forEach((subject) => {
+      return console.log(`My favorite subjects are ${subject}.`);
+    });
   }
   PRAssignment(student, subject) {
     return `${student.name} has submitted a PR for ${subject}`;
@@ -84,7 +86,7 @@ let aaron = new Student({
   catchPhrase: "Howdey y'all",
   previousBackground: 'Auto Tech',
   className: 'Web 25',
-  favSubjects: 'Less, JavaScript, & React',
+  favSubjects: ['Less, JavaScript, & React'],
 });
 
 let fez = new Student({
@@ -96,7 +98,7 @@ let fez = new Student({
   catchPhrase: 'I said good day!',
   previousBackground: 'High school student',
   className: 'Web 19',
-  favSubjects: 'React, & Python',
+  favSubjects: ['React, & Python'],
 });
 
 let allie = new ProjectManagers({
@@ -137,7 +139,8 @@ console.log(brittH.demo('CSS'));
 console.log(velma.grade(aaron, 'LESS'));
 console.log(aaron.listsSubjects());
 console.log(fez.PRAssignment(fez, 'JavaScript-I'));
-console.log(fez.speak());
 console.log(aaron.sprintChallenge(aaron, 'Sprint-Challenge--JavaScript'));
 console.log(allie.standUp(allie, 'Web25_allie'));
 console.log(fonz.debugsCode(fonz, fez, 'JavaScript-III'));
+console.log(fonz.catchPhrase);
+console.log(fez.speak());
